@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 2.5cm 2.5cm 2.5cm 2.5cm;
+  }
+  body {
+    font-family: "Noto Sans", "Liberation Sans", Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.65;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  .title-block {
+    text-align: center;
+    margin-bottom: 20pt;
+    padding-bottom: 12pt;
+    border-bottom: 2pt solid #2d4a7a;
+  }
+  .title-block h1 {
+    font-size: 20pt;
+    color: #1a2e4a;
+    margin: 0 0 6pt 0;
+    font-weight: bold;
+  }
+  .title-block .subtitle {
+    font-size: 10pt;
+    color: #666;
+    margin: 0;
+  }
+  h2 {
+    font-size: 13pt;
+    color: #1a2e4a;
+    margin: 18pt 0 5pt 0;
+    padding-bottom: 3pt;
+    border-bottom: 1pt solid #2d4a7a;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 11pt;
+    color: #2d4a7a;
+    margin: 12pt 0 4pt 0;
+    font-weight: bold;
+  }
+  p { margin: 5pt 0; }
+  ul, ol { margin: 4pt 0 4pt 18pt; padding: 0; }
+  li { margin-bottom: 3pt; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10pt 0;
+    font-size: 9pt;
+  }
+  th {
+    background-color: #2d4a7a;
+    color: white;
+    padding: 6pt 7pt;
+    text-align: center;
+    font-weight: bold;
+  }
+  td {
+    padding: 5pt 7pt;
+    border: 0.5pt solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+  }
+  tr:nth-child(even) td { background-color: #f5f7fa; }
+  tr:nth-child(odd) td { background-color: #ffffff; }
+  .total-row td { background-color: #eaf0fb !important; font-weight: bold; }
+  .step-block {
+    margin: 8pt 0 4pt 0;
+    padding-left: 12pt;
+    border-left: 3pt solid #2d4a7a;
+  }
+  .step-title {
+    font-weight: bold;
+    color: #1a2e4a;
+    margin-bottom: 2pt;
+  }
+  b { color: #1a2e4a; }
+  .td-left { text-align: left; }
+</style>
+</head>
+<body>
+
+<div class="title-block">
+  <h1>Experimental Procedure</h1>
+  <p class="subtitle">Audio-Tactile Soft Pillow Study: Multimodal Conditions for Bodily Comfort</p>
+</div>
+
+<h2>1. Overview</h2>
+
+<p>This study uses a <b>2×2 within-subjects design</b>, with two independent variables: <b>temporal synchronization</b> (synchronous vs. asynchronous) and <b>modality prominence</b> (sound-dominant vs. touch-dominant), yielding four experimental conditions. Each participant completes all four conditions, presented in an order determined by a balanced Latin square counterbalancing scheme to control for order and carryover effects.</p>
+
+<p>A total of <b>16 participants</b> will be recruited (8 male, 8 female; aged 18–30), all in a normal emotional state with no hearing impairment, tactile hypersensitivity, or neurological conditions. Participants must not have consumed neurologically active medications or large amounts of caffeine in the 24 hours prior to the session.</p>
+
+<h2>2. Experimental Conditions</h2>
+
+<table>
+  <tr>
+    <th>Condition</th><th>Label</th><th>Synchronization</th><th>Modality Prominence</th><th>Parameters</th>
+  </tr>
+  <tr>
+    <td>C1</td><td>Sync – Sound-dominant</td><td>Synchronous (0 ms)</td><td>Sound &gt; Touch (1.2:1)</td><td>Pink noise 55–65 dB; Vibration PWM 45–70</td>
+  </tr>
+  <tr>
+    <td>C2</td><td>Sync – Touch-dominant</td><td>Synchronous (0 ms)</td><td>Touch &gt; Sound (1.2:1)</td><td>Pink noise 45–55 dB; Vibration PWM 60–85</td>
+  </tr>
+  <tr>
+    <td>C3</td><td>Async – Sound-dominant</td><td>Asynchronous (500 ms)</td><td>Sound &gt; Touch (1.2:1)</td><td>Pink noise 55–65 dB; Vibration PWM 45–70</td>
+  </tr>
+  <tr>
+    <td>C4</td><td>Async – Touch-dominant</td><td>Asynchronous (500 ms)</td><td>Touch &gt; Sound (1.2:1)</td><td>Pink noise 45–55 dB; Vibration PWM 60–85</td>
+  </tr>
+</table>
+
+<p>The four conditions differ along two dimensions. First, <b>temporal alignment</b>: in synchronous conditions, the 1 Hz amplitude-modulation envelopes of sound and vibration are perfectly phase-aligned (0 ms offset); in asynchronous conditions, the vibration signal is delayed by 500 ms relative to the audio. Second, <b>relative intensity</b>: in sound-dominant conditions the perceived audio intensity slightly exceeds the vibration; in touch-dominant conditions the reverse applies.</p>
+
+<h2>3. Laboratory Environment</h2>
+
+<p>Sessions are conducted in a quiet, dedicated room with curtains drawn and indirect warm lighting (approx. 300 lux), room temperature maintained at 22–24°C, and ambient noise below 35 dB. No extraneous visual distractors are present.</p>
+
+<p>Participants sit in a comfortable chair with back support and armrests, feet resting flat on the floor. The experimental device — a 40×40 cm soft pillow housing five ERM vibration motors and an audio module — is held against the participant's abdomen or chest in whatever position feels natural. Participants may adjust the pillow freely; the only requirement is that it maintains stable body contact throughout each trial.</p>
+
+<p>The researcher sits at a workstation approximately 2 m behind the participant, operating the Arduino control system and recording observations. This arrangement minimizes social presence effects on participants' subjective experience.</p>
+
+<h2>4. Session Protocol</h2>
+
+<h3>Phase 1: Reception and Informed Consent (approx. 10 min)</h3>
+
+<p>The researcher greets the participant at the door and leads them to the laboratory. The study is introduced verbally: participants are told they will experience four different sound-and-vibration combinations, each lasting 15 minutes, and that they will be asked a few questions after each one. The researcher does <b>not</b> disclose the specific hypotheses, condition differences, or expected outcomes, so as to avoid demand characteristics.</p>
+
+<p>Participants then read and sign the written informed consent form, which covers the study's purpose, procedures and duration, the right to withdraw at any time without penalty, data anonymization, and the confidentiality of interview recordings. After signing, participants complete a brief demographic form covering age, gender, any hearing or tactile sensory impairments, neurological history, and medication or caffeine intake in the preceding 24 hours.</p>
+
+<h3>Phase 2: Baseline Measurement (approx. 5 min)</h3>
+
+<p>Participants sit quietly for approximately 1 minute without any external stimulation, breathing naturally to reach a stable resting state. They then complete two baseline questionnaires:</p>
+<ul>
+  <li><b>SAM (Self-Assessment Manikin):</b> A 9-point pictographic scale assessing emotional valence (very unpleasant to very pleasant), arousal (very calm to very excited), and dominance (no control to full control). The researcher explains all three dimensions on first use.</li>
+  <li><b>RSQ (Relaxation State Questionnaire):</b> Assesses overall current relaxation level.</li>
+</ul>
+<p>The researcher confirms that the participant is in a stable emotional state before proceeding. If the participant reports notable anxiety or discomfort, the session may be postponed or cancelled.</p>
+
+<h3>Phase 3: Familiarization (approx. 3 min)</h3>
+
+<p>The researcher hands the pillow to the participant and guides them to place it against their body in a comfortable holding position, confirming that there is stable surface contact to ensure effective vibration transmission.</p>
+
+<p>The device then runs a 60-second demonstration stimulus at a moderate intensity (pink noise approx. 50 dB; vibration PWM approx. 50), allowing the participant to become familiar with the basic character of the sound and vibration. This demonstration does <b>not</b> correspond to any of the four experimental conditions and serves purely as sensory familiarization.</p>
+
+<p>Afterwards the researcher asks: "How did that feel? Was there anything uncomfortable? Would you like to adjust the position of the pillow?" Any necessary adjustments are made, and the formal trials begin once the participant confirms they are comfortable and ready.</p>
+
+<h3>Phase 4: Experimental Trials (approx. 96 min)</h3>
+
+<p>The four conditions are presented in a sequence determined by a pre-generated balanced Latin square, assigned as follows:</p>
+
+<table>
+  <tr>
+    <th>Participant IDs</th><th>Trial 1</th><th>Trial 2</th><th>Trial 3</th><th>Trial 4</th>
+  </tr>
+  <tr>
+    <td>P01, P05, P09, P13</td><td>C1</td><td>C2</td><td>C4</td><td>C3</td>
+  </tr>
+  <tr>
+    <td>P02, P06, P10, P14</td><td>C2</td><td>C3</td><td>C1</td><td>C4</td>
+  </tr>
+  <tr>
+    <td>P03, P07, P11, P15</td><td>C3</td><td>C4</td><td>C2</td><td>C1</td>
+  </tr>
+  <tr>
+    <td>P04, P08, P12, P16</td><td>C4</td><td>C1</td><td>C3</td><td>C2</td>
+  </tr>
+</table>
+
+<p><b>Procedure for each condition (repeated four times):</b></p>
+
+<div class="step-block">
+  <p class="step-title">Step 1: Condition onset</p>
+  <p>The researcher says: "The next experience is about to begin. Please close your eyes, turn your attention to what you feel in your body, and breathe at whatever pace feels natural." Once the participant has closed their eyes and settled, the stimulus program for the current condition is started.</p>
+</div>
+
+<div class="step-block">
+  <p class="step-title">Step 2: Stimulus delivery (15 min)</p>
+  <p>The Arduino outputs the audio signal (1 Hz sine-wave amplitude-modulated pink noise via the DFPlayer Mini) and the vibration signal (1 Hz modulated output from five ERM motors, either phase-aligned or 500 ms delayed) according to the current condition's preset parameters. Participants remain quiet, breathe naturally, and focus on bodily sensation. The researcher makes no verbal interventions, monitoring the device from the control station.</p>
+</div>
+
+<div class="step-block">
+  <p class="step-title">Step 3: Immediate quantitative ratings (approx. 2 min)</p>
+  <p>When the 15-minute stimulus ends, the device stops automatically. The researcher says quietly: "That experience has ended — take your time opening your eyes." Once the participant is oriented, the SAM and RSQ are administered immediately, with the prompt: "Please rate how you felt during that experience. Go with your first impression." Collecting ratings immediately captures the freshest subjective response and minimizes memory decay or retrospective distortion.</p>
+</div>
+
+<div class="step-block">
+  <p class="step-title">Step 4: Brief verbal report (approx. 2–3 min)</p>
+  <p>After the scales are completed, the researcher conducts a short verbal check-in while the experience is still vivid, capturing key bodily descriptions to serve as anchors for the in-depth interview later. The researcher asks: "What did you notice in your body during that experience?", "How would you describe the relationship between the sound and the vibration?", and "Overall, did it feel comfortable?" The researcher notes key words and records the exchange; no probing or leading questions are used at this stage.</p>
+</div>
+
+<div class="step-block">
+  <p class="step-title">Step 5: Inter-trial rest (12 min; omitted after the fourth condition)</p>
+  <p>Following each of the first three conditions, participants rest for 12 minutes. They may drink water or stretch, but should not use phones or other devices and should not discuss the experiment. The researcher may engage in light conversation to maintain a comfortable atmosphere, while avoiding any experiment-related topics. The 12-minute duration was determined through pilot testing as the minimum needed to clear residual sensory effects without causing fatigue or attention loss. Once the rest period ends, the researcher confirms readiness and the next condition begins.</p>
+</div>
+
+<h3>Phase 5: Post-session In-depth Interview (approx. 15–20 min)</h3>
+
+<p>After all four conditions are complete, the researcher conducts a semi-structured in-depth interview. The aim is to elicit overall comparisons and detailed reflections that quantitative ratings alone cannot capture. The entire interview is recorded (with the participant's verbal confirmation of consent).</p>
+
+<p><b>Overall comparison:</b></p>
+<ul>
+  <li>"Looking back at all four experiences, which felt most comfortable? What made it feel that way?"</li>
+  <li>"Which felt most relaxing? Can you describe what that relaxation felt like?"</li>
+  <li>"Was there any experience that felt uncomfortable or odd? What caused that?"</li>
+</ul>
+
+<p><b>Perception of sound–vibration relationship:</b></p>
+<ul>
+  <li>"Did you notice anything different about how the sound and vibration related to each other across the four experiences?"</li>
+  <li>"Did it make a difference to you whether the sound and vibration seemed to arrive at the same time or not?"</li>
+  <li>"Sometimes the sound was more prominent and sometimes the vibration was. Did that distinction affect your experience? Which did you prefer?"</li>
+</ul>
+
+<p><b>Specific bodily sensations:</b></p>
+<ul>
+  <li>"In the experience you found most comfortable, what exactly did you notice in your body — in your breathing, your muscles, your sense of weight?"</li>
+  <li>"Did you ever feel your breathing starting to follow the rhythm of the sound or vibration?"</li>
+  <li>"How did hugging the pillow itself feel? Did the vibration feel natural?"</li>
+</ul>
+
+<p><b>Everyday use:</b></p>
+<ul>
+  <li>"If this pillow were something you could use in daily life, would you want to? In what situations would it be most useful?"</li>
+  <li>"Which mode would you choose? Why?"</li>
+</ul>
+
+<p>The researcher maintains an open, non-leading stance throughout. When a participant's description is vague, they are gently invited to elaborate: "Could you say a bit more?" or "Is there a specific moment you can point to?"</p>
+
+<h3>Phase 6: Debrief and Close (approx. 5 min)</h3>
+
+<p>After the interview, the participant completes one final SAM rating to confirm that their emotional state has returned to baseline, verifying that the session has had no lasting negative emotional effect.</p>
+
+<p>The researcher then delivers a debrief, explaining the study's specific objectives — to explore how different audio-tactile synchronization and modality prominence configurations affect bodily comfort and relaxation — and clarifying the distinction between each of the four conditions. Any remaining questions are answered.</p>
+
+<p>The participant signs a data use confirmation form, the researcher thanks them for their time, and the session closes.</p>
+
+<h2>5. Timeline</h2>
+
+<table>
+  <tr>
+    <th style="width:15%">Phase</th><th style="text-align:left">Content</th><th style="width:18%">Duration</th>
+  </tr>
+  <tr><td>Phase 1</td><td class="td-left">Reception, informed consent, demographics</td><td>approx. 10 min</td></tr>
+  <tr><td>Phase 2</td><td class="td-left">Baseline measurement (SAM + RSQ)</td><td>approx. 5 min</td></tr>
+  <tr><td>Phase 3</td><td class="td-left">Familiarization (device introduction and demo stimulus)</td><td>approx. 3 min</td></tr>
+  <tr><td rowspan="4">Phase 4</td><td class="td-left">Condition 1: stimulus 15 min + ratings 2 min + verbal report 3 min + rest 12 min</td><td>approx. 32 min</td></tr>
+  <tr><td class="td-left">Condition 2: stimulus 15 min + ratings 2 min + verbal report 3 min + rest 12 min</td><td>approx. 32 min</td></tr>
+  <tr><td class="td-left">Condition 3: stimulus 15 min + ratings 2 min + verbal report 3 min + rest 12 min</td><td>approx. 32 min</td></tr>
+  <tr><td class="td-left">Condition 4: stimulus 15 min + ratings 2 min + verbal report 3 min (no rest)</td><td>approx. 20 min</td></tr>
+  <tr><td>Phase 5</td><td class="td-left">Post-session in-depth interview</td><td>approx. 15–20 min</td></tr>
+  <tr><td>Phase 6</td><td class="td-left">Final SAM rating, debrief, close</td><td>approx. 5 min</td></tr>
+  <tr class="total-row"><td><b>Total</b></td><td></td><td><b>approx. 154–159 min</b></td></tr>
+</table>
+
+<h2>6. Ethics and Data Management</h2>
+
+<ul>
+  <li><b>Informed consent:</b> Participation is entirely voluntary. Participants may withdraw at any time and without giving a reason.</li>
+  <li><b>Anonymization:</b> All data are labeled by participant code (P01–P16). No personally identifiable information is recorded.</li>
+  <li><b>Interview recordings:</b> Raw audio files are deleted upon transcription. Transcripts are stored encrypted on a secure server accessible only to the research team.</li>
+  <li><b>Data use:</b> All data are used solely for academic analysis and thesis writing, with no commercial application.</li>
+  <li><b>Ethics approval:</b> The protocol has been submitted to the institutional ethics review board and adheres to the principles of the Declaration of Helsinki.</li>
+</ul>
+
+</body>
+</html>
