@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experimental Procedure — Audio-Haptic Soft Object for Emotional Regulation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --kth-blue: #004791;
+    --kth-dark: #00264a;
+    --kth-light: #e8f0f8;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --border: #d0d7de;
+    --bg-white: #ffffff;
+    --bg-cream: #fafbfc;
+    --accent: #0969da;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Source Serif 4', 'Georgia', serif;
+    color: var(--text-primary);
+    background: var(--bg-cream);
+    line-height: 1.75;
+    font-size: 17px;
+  }
+
+  /* Header */
+  .header {
+    background: var(--kth-blue);
+    color: white;
+    padding: 2rem 0;
+    border-bottom: 4px solid var(--kth-dark);
+  }
+
+  .header-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .header img {
+    height: 64px;
+    filter: brightness(0) invert(1);
+  }
+
+  .header-text {
+    flex: 1;
+  }
+
+  .header-text .university {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.3rem;
+  }
+
+  .header-text .title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .header-text .subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    opacity: 0.75;
+    margin-top: 0.4rem;
+  }
+
+  /* Main content */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem 4rem;
+  }
+
+  /* Section titles */
+  h2 {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--kth-blue);
+    margin-top: 2.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.45rem;
+    border-bottom: 2px solid var(--kth-blue);
+  }
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
+
+  h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--kth-dark);
+    margin-top: 2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-top: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+
+  /* Phase cards */
+  .phase {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--kth-blue);
+    border-radius: 6px;
+    padding: 1.5rem 1.8rem;
+    margin: 1.5rem 0;
+  }
+
+  .phase-header {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--kth-blue);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .phase-tag {
+    background: var(--kth-light);
+    color: var(--kth-blue);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0 1.5rem;
+    font-size: 0.92rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  thead {
+    background: var(--kth-blue);
+    color: white;
+  }
+
+  thead th {
+    padding: 0.65rem 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+  }
+
+  tbody td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) {
+    background: var(--bg-cream);
+  }
+
+  tbody tr:hover {
+    background: var(--kth-light);
+  }
+
+  /* Step blocks inside phase cards */
+  .step {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+    border-left: 2px solid #c8d6e5;
+  }
+
+  .step-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--kth-dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .step p {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Interview questions */
+  .interview-block {
+    background: var(--kth-light);
+    border-radius: 5px;
+    padding: 1.2rem 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .interview-block h4 {
+    margin-top: 0;
+    color: var(--kth-blue);
+  }
+
+  .interview-block ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .interview-block li {
+    position: relative;
+    padding-left: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.93rem;
+    font-style: italic;
+    color: var(--text-secondary);
+  }
+
+  .interview-block li::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    color: var(--kth-blue);
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  /* Timeline summary */
+  .timeline-table thead {
+    background: var(--kth-dark);
+  }
+
+  .timeline-table .total-row {
+    background: var(--kth-light);
+    font-weight: 600;
+  }
+
+  /* Quote / instruction text */
+  .spoken {
+    font-style: italic;
+    color: var(--text-secondary);
+    background: #f6f8fa;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.93rem;
+    border-left: 3px solid var(--kth-blue);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: #8b949e;
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  /* Print styles */
+  @media print {
+    .header { background: white; color: var(--kth-blue); border-bottom-color: var(--kth-blue); }
+    .header img { filter: none; }
+    .phase { break-inside: avoid; }
+    body { font-size: 11pt; }
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .header-inner { flex-direction: column; text-align: center; gap: 1rem; }
+    .container { padding: 1.5rem 1rem 3rem; }
+    table { font-size: 0.8rem; }
+    thead th, tbody td { padding: 0.4rem 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <img src="https://intra.kth.se/img/logotype-white.svg" alt="KTH Royal Institute of Technology" onerror="this.onerror=null;this.src='https://www.kth.se/polopoly_fs/1.77257.1600720912!/KTH_Logotyp_RGB_2013-2.svg';this.style.filter='brightness(0) invert(1)';">
+    <div class="header-text">
+      <div class="university">KTH Royal Institute of Technology</div>
+      <div class="title">Designing Audio-Haptic Soft Objects for Emotional Regulation</div>
+      <div class="subtitle">Experimental Procedure — Soma-Based Multimodal Conditions for Comfortable and Relaxing Experiences</div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <h2>1. Overview</h2>
+  <p>
+    This study employed a 2×2 within-subjects design crossing synchrony (synchronous vs. asynchronous) with sensory dominance (audio-dominant vs. haptic-dominant), yielding four experimental conditions. Each participant experienced all four conditions in a single session. The presentation order was counterbalanced across participants using a balanced Latin square to control for order and carryover effects.
+  </p>
+  <p>
+    Sixteen participants (8 male, 8 female) were recruited, aged between 18 and 30, all in a normal emotional state with no reported hearing impairment, tactile sensitivity disorders, or neurological conditions. Participants confirmed that they had not consumed substances affecting the nervous system or large amounts of caffeine within 24 hours prior to the experiment.
+  </p>
+
+  <h2>2. Experimental Conditions</h2>
+  <p>
+    The four conditions differed along two dimensions. The first was the temporal relationship between audio and vibration: in synchronous conditions, the 1 Hz amplitude-modulation envelopes of both channels were perfectly aligned with zero phase offset, while in asynchronous conditions the vibration signal lagged behind the audio signal by 500 ms, producing a perceptible but moderate temporal mismatch. The second dimension was the relative perceptual intensity of the two sensory channels.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Condition</th>
+        <th>Label</th>
+        <th>Synchrony</th>
+        <th>Sensory Dominance</th>
+        <th>Parameters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>C1</td>
+        <td>Sync – Audio</td>
+        <td>Synchronous (0 ms offset)</td>
+        <td>Audio &gt; Haptic (1.2 : 1)</td>
+        <td>Pink noise 55–65 dB; vibration PWM 45–70</td>
+      </tr>
+      <tr>
+        <td>C2</td>
+        <td>Sync – Haptic</td>
+        <td>Synchronous (0 ms offset)</td>
+        <td>Haptic &gt; Audio (1.2 : 1)</td>
+        <td>Pink noise 45–55 dB; vibration PWM 60–85</td>
+      </tr>
+      <tr>
+        <td>C3</td>
+        <td>Async – Audio</td>
+        <td>Asynchronous (500 ms offset)</td>
+        <td>Audio &gt; Haptic (1.2 : 1)</td>
+        <td>Pink noise 55–65 dB; vibration PWM 45–70</td>
+      </tr>
+      <tr>
+        <td>C4</td>
+        <td>Async – Haptic</td>
+        <td>Asynchronous (500 ms offset)</td>
+        <td>Haptic &gt; Audio (1.2 : 1)</td>
+        <td>Pink noise 45–55 dB; vibration PWM 60–85</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>3. Setting</h2>
+  <p>
+    The experiment took place in a quiet, softly lit room. Curtains were drawn and a warm-toned desk lamp provided indirect illumination to create a calm, non-threatening atmosphere. Room temperature was maintained at 22–24 °C and ambient noise remained below 35 dB. The room was free of unnecessary decorations or visual distractions.
+  </p>
+  <p>
+    Participants sat in a comfortable chair with a backrest and armrests, feet flat on the floor. The experimental apparatus — a 40 × 40 cm soft pillow housing five ERM vibration motors and a DFPlayer Mini audio module — was placed on the participant's lap or held against the abdomen. Participants were free to adjust the pillow's position and their holding posture according to personal preference; the only requirement was that the pillow maintained stable contact with the body to ensure effective vibration transmission.
+  </p>
+  <p>
+    The experimenter sat at a workstation approximately two metres behind the participant, operating the Arduino control system and recording data. This spatial arrangement was intended to minimise social presence effects while allowing the experimenter to respond promptly if needed.
+  </p>
+
+  <h2>4. Procedure</h2>
+
+  <!-- Phase 1 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-tag">Phase 1</span>
+      Reception and Informed Consent — approx. 10 min
+    </div>
+    <p>
+      The experimenter greeted the participant at the door, guided them into the room, and invited them to sit down. After a brief self-introduction, the experimenter provided a verbal overview: participants would interact with a soft object that produced different combinations of sound and vibration, and the study aimed to understand how these combinations felt in the body. They were told they would experience four configurations, each lasting 15 minutes, followed by short questions and brief verbal descriptions.
+    </p>
+    <p>
+      The specific hypotheses, the nature of the differences between conditions, and the expected outcomes were deliberately withheld to prevent demand characteristics from influencing subjective reports.
+    </p>
+    <p>
+      Participants read and signed a written informed consent form covering the purpose of the study, the procedure and expected duration, the right to withdraw at any time without giving a reason, data anonymisation and storage practices, and the use and confidentiality of interview recordings. They then completed a short demographic questionnaire recording age, sex, hearing or tactile sensitivity issues, neurological history, and recent consumption of neuroactive substances or caffeine.
+    </p>
+  </div>
+
+  <!-- Phase 2 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-tag">Phase 2</span>
+      Baseline Measurement — approx. 5 min
+    </div>
+    <p>
+      Participants sat quietly for approximately one minute without any external stimulation, breathing naturally, to allow their mental and physical state to settle.
+    </p>
+    <p>
+      They then completed two baseline measures. The first was the Self-Assessment Manikin (SAM), a 9-point pictorial scale assessing current valence (very unpleasant to very pleasant), arousal (very calm to very excited), and dominance (no control to full control). For first-time users, the experimenter explained each dimension and the rating procedure. The second was the Relaxation State Questionnaire (RSQ), capturing the participant's overall relaxation level.
+    </p>
+    <p>
+      These baseline scores served as a reference point against which post-condition measurements could be compared. The experimenter confirmed that the participant was in a normal, stable emotional state before proceeding. If a participant reported noticeable anxiety, discomfort, or emotional disturbance, the session would be postponed or cancelled.
+    </p>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-tag">Phase 3</span>
+      Familiarisation — approx. 3 min
+    </div>
+    <p>
+      The experimenter handed the pillow to the participant and helped them find a comfortable way to hold it against the abdomen or chest. The experimenter checked that the pillow had a stable contact surface with the body to ensure reliable vibration transmission.
+    </p>
+    <p>
+      The device then ran a brief familiarisation stimulus at moderate intensity (pink noise at approximately 50 dB, vibration PWM at approximately 50) for about 60 seconds. This stimulus did not correspond to any experimental condition and served solely to acquaint the participant with the basic sensation, reducing novelty and any associated tension.
+    </p>
+    <div class="spoken">
+      "How did that feel? Was anything uncomfortable? Would you like to adjust the pillow's position?"
+    </div>
+    <p>
+      Adjustments were made as needed. Once the participant confirmed they felt comfortable and ready, the formal experiment began.
+    </p>
+  </div>
+
+  <!-- Phase 4 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-tag">Phase 4</span>
+      Formal Experiment — approx. 96 min
+    </div>
+    <p>
+      The four conditions were presented sequentially. Presentation order followed a balanced Latin square assigned to each participant before the session:
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Participants</th>
+          <th>1st</th>
+          <th>2nd</th>
+          <th>3rd</th>
+          <th>4th</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>P01, P05, P09, P13</td><td>C1</td><td>C2</td><td>C4</td><td>C3</td></tr>
+        <tr><td>P02, P06, P10, P14</td><td>C2</td><td>C3</td><td>C1</td><td>C4</td></tr>
+        <tr><td>P03, P07, P11, P15</td><td>C3</td><td>C4</td><td>C2</td><td>C1</td></tr>
+        <tr><td>P04, P08, P12, P16</td><td>C4</td><td>C1</td><td>C3</td><td>C2</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      With 16 participants divided evenly into four groups of four, each condition appeared in each ordinal position exactly four times, achieving full counterbalancing. The following sequence was repeated for each of the four conditions:
+    </p>
+
+    <div class="step">
+      <div class="step-label">Step 1 — Condition Onset Cue</div>
+      <div class="spoken">
+        "We are about to start the next experience. Please close your eyes and bring your attention to how your body feels. There is nothing you need to do — just breathe at whatever pace feels natural."
+      </div>
+      <p>Once the participant had closed their eyes and settled into a comfortable posture, the experimenter started the stimulus programme for the current condition.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 2 — Stimulus Presentation (15 min)</div>
+      <p>
+        The Arduino control system delivered the audio signal (1 Hz sinusoidally amplitude-modulated pink noise via the DFPlayer Mini) and the vibration signal (1 Hz sinusoidally modulated output to five ERM motors, either in phase or offset by 500 ms) according to the parameters of the current condition. Throughout the 15-minute presentation, the participant remained quiet, breathed naturally, and focused on bodily sensations. The experimenter did not speak or interact with the participant, monitoring only the device's output stability from the control station.
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 3 — Immediate Quantitative Measurement (approx. 2 min)</div>
+      <p>
+        When the 15 minutes elapsed, the device stopped automatically. The experimenter said softly:
+      </p>
+      <div class="spoken">
+        "This experience has ended. You can open your eyes whenever you are ready."
+      </div>
+      <p>
+        Once the participant was alert, they immediately completed the SAM and the RSQ based on the experience they had just had. The experimenter reminded them to rate based on their overall feeling during the experience and to go with their first impression. Collecting these ratings immediately after stimulus offset aimed to capture the most vivid subjective impressions before memory decay or retrospective bias could set in.
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 4 — Brief Verbal Note-Taking (approx. 2–3 min)</div>
+      <p>
+        After the questionnaires, the experimenter conducted a short verbal check-in to capture key bodily impressions while memory was still fresh. These notes served as anchor points for the in-depth interview at the end of the session. The experimenter asked:
+      </p>
+      <div class="interview-block">
+        <ul>
+          <li>What did your body feel like during that experience? Could you describe it briefly?</li>
+          <li>How would you describe the relationship between the sound and the vibration?</li>
+          <li>Overall, did you find that experience comfortable? Relaxing?</li>
+        </ul>
+      </div>
+      <p>
+        The experimenter jotted down keywords and short phrases. The exchange was also audio-recorded. No deep probing or leading questions were used at this stage; the purpose was rapid capture of immediate impressions only.
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="step-label">Step 5 — Inter-Condition Rest (12 min; omitted after the fourth condition)</div>
+      <p>
+        After each of the first three conditions, participants rested for 12 minutes. During this period they could drink water, stretch, or move around, but were asked not to use electronic devices, not to leave the room, and not to discuss the experiment with the experimenter. Light casual conversation on unrelated topics was permitted to maintain a comfortable atmosphere.
+      </p>
+      <p>
+        The 12-minute rest interval was established during the pilot study as a reasonable balance: shorter breaks proved insufficient to dissipate residual sensory impressions from the preceding condition, while longer breaks led to fatigue and declining attention. At the end of the rest period, the experimenter asked whether the participant was ready for the next experience, and the sequence returned to Step 1.
+      </p>
+    </div>
+  </div>
+
+  <!-- Phase 5 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-tag">Phase 5</span>
+      Post-Experiment In-Depth Interview — approx. 15–20 min
+    </div>
+    <p>
+      After all four conditions had been completed, the experimenter conducted a semi-structured in-depth interview. This interview was the primary qualitative data-collection event of the study, designed to elicit comparative reflections and experiential details that quantitative scales alone could not capture. The entire interview was audio-recorded with the participant's verbal re-confirmation of consent.
+    </p>
+    <p>The interview was organised around the following themes, with the experimenter following up flexibly based on each participant's responses:</p>
+
+    <div class="interview-block">
+      <h4>Overall Comparison</h4>
+      <ul>
+        <li>You just experienced four different sound-and-vibration combinations. Looking back, which one felt the most comfortable to you? Why?</li>
+        <li>Which one felt the most relaxing? Can you describe what that relaxation felt like in your body?</li>
+        <li>Was there any experience that felt uncomfortable or strange? What gave you that impression?</li>
+      </ul>
+    </div>
+
+    <div class="interview-block">
+      <h4>Perception of Audio–Haptic Relationship</h4>
+      <ul>
+        <li>Across the four experiences, did you notice any differences in how the sound and vibration related to each other?</li>
+        <li>Do you think the sound and vibration happening at the same time versus at different times affected how you felt?</li>
+        <li>Sometimes the sound was more noticeable, sometimes the vibration was. Did that difference matter to you? Which did you prefer?</li>
+      </ul>
+    </div>
+
+    <div class="interview-block">
+      <h4>Bodily Experience</h4>
+      <ul>
+        <li>During the experience you found most comfortable, what specifically did your body feel like? For instance, did you notice any changes in your breathing, muscle tension, or sense of body weight?</li>
+        <li>Did you ever feel that your breathing rhythm moved closer to the rhythm of the sound or vibration?</li>
+        <li>How did it feel to hold the pillow? Did the vibration feel natural to you?</li>
+      </ul>
+    </div>
+
+    <div class="interview-block">
+      <h4>Everyday Use</h4>
+      <ul>
+        <li>If this pillow were something you could use in daily life, would you want to? In what situations do you think it would be most useful?</li>
+        <li>Which mode would you choose? Why?</li>
+      </ul>
+    </div>
+
+    <p>
+      Throughout the interview, the experimenter maintained an open, non-directive stance, avoiding suggestive language or any indication of preference for a particular condition. When a participant's description remained general, the experimenter used prompts such as "Could you say a bit more about that?" or "Can you think of a specific moment?" to encourage deeper recall.
+    </p>
+  </div>
+
+  <!-- Phase 6 -->
+  <div class="phase">
+    <div class="phase-header">
+      <span class="phase-tag">Phase 6</span>
+      Debriefing and Closing — approx. 5 min
+    </div>
+    <p>
+      The participant completed a final SAM rating to confirm that their emotional state had returned to a normal level, ensuring that the experimental procedure had not caused any lasting negative affect.
+    </p>
+    <p>
+      The experimenter then provided a brief debriefing, explaining the specific purpose of the study — to explore how different audio-haptic synchrony and sensory-dominance configurations influence bodily comfort and relaxation — and describing the differences between the four conditions. The experimenter answered any questions the participant raised.
+    </p>
+    <p>
+      The participant signed a data-use confirmation form acknowledging how their data would be used. The experimenter thanked the participant, and the session concluded.
+    </p>
+  </div>
+
+  <h2>5. Timeline Summary</h2>
+  <table class="timeline-table">
+    <thead>
+      <tr>
+        <th>Phase</th>
+        <th>Content</th>
+        <th>Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Phase 1</td><td>Reception, informed consent, demographics</td><td>≈ 10 min</td></tr>
+      <tr><td>Phase 2</td><td>Baseline measurement (SAM + RSQ)</td><td>≈ 5 min</td></tr>
+      <tr><td>Phase 3</td><td>Familiarisation with device</td><td>≈ 3 min</td></tr>
+      <tr><td>Phase 4a</td><td>Condition 1: stimulus 15 min + measures 2 min + verbal notes 3 min + rest 12 min</td><td>≈ 32 min</td></tr>
+      <tr><td>Phase 4b</td><td>Condition 2: stimulus 15 min + measures 2 min + verbal notes 3 min + rest 12 min</td><td>≈ 32 min</td></tr>
+      <tr><td>Phase 4c</td><td>Condition 3: stimulus 15 min + measures 2 min + verbal notes 3 min + rest 12 min</td><td>≈ 32 min</td></tr>
+      <tr><td>Phase 4d</td><td>Condition 4: stimulus 15 min + measures 2 min + verbal notes 3 min</td><td>≈ 20 min</td></tr>
+      <tr><td>Phase 5</td><td>Post-experiment in-depth interview</td><td>≈ 15–20 min</td></tr>
+      <tr><td>Phase 6</td><td>Final SAM, debriefing, closing</td><td>≈ 5 min</td></tr>
+      <tr class="total-row"><td></td><td><strong>Total</strong></td><td><strong>≈ 154–159 min</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. Ethics and Data Management</h2>
+  <p>
+    The study protocol was submitted to the institutional ethics review board for approval prior to data collection. All participants took part voluntarily and retained the right to withdraw at any point without giving a reason. All collected data — scale ratings, interview recordings, and experimenter notes — were anonymised, with participants identified only by code (P01–P16). No personally identifiable information was recorded. Interview recordings were deleted after transcription was complete; transcripts were stored in encrypted form on the research team's secure server, accessible only to members of the research group. All data were used exclusively for the academic analysis and thesis writing associated with this study and will not be used for any commercial purpose.
+  </p>
+
+</main>
+
+<footer class="footer">
+  KTH Royal Institute of Technology · Master's Thesis · 2025
+</footer>
+
+</body>
+</html>
